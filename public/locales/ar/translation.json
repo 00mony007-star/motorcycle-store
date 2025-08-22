@@ -1,0 +1,113 @@
+{
+  "header": {
+    "searchPlaceholder": "ابحث عن الخوذات، السترات، القفازات...",
+    "themeToggle": "تبديل المظهر",
+    "wishlist": "قائمة الرغبات",
+    "cart": "عربة التسوق",
+    "userMenu": "قائمة المستخدم",
+    "myAccount": "حسابي",
+    "myOrders": "طلباتي",
+    "adminPanel": "لوحة التحكم",
+    "signOut": "تسجيل الخروج",
+    "signIn": "تسجيل الدخول",
+    "menu": "القائمة"
+  },
+  "footer": {
+    "shop": "تسوق",
+    "helmets": "الخوذات",
+    "jackets": "السترات",
+    "gloves": "القفازات",
+    "boots": "الأحذية",
+    "accessories": "الإكسسوارات",
+    "offers": "عروض خاصة",
+    "customerService": "خدمة العملاء",
+    "contactUs": "اتصل بنا",
+    "shippingInfo": "معلومات الشحن",
+    "returns": "الإرجاع والاستبدال",
+    "stayConnected": "ابق على تواصل",
+    "newsletterPrompt": "احصل على أحدث مراجعات المعدات ونصائح السلامة والعروض الحصرية.",
+    "subscribe": "اشترك",
+    "copyright": "© 2025 متجر موتوجير. جميع الحقوق محفوظة.",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة"
+  },
+  "product": {
+    "addToCart": "أضف إلى السلة",
+    "added": "تمت الإضافة",
+    "outOfStock": "نفدت الكمية",
+    "featured": "مميز",
+    "sale": "تخفيض",
+    "description": "الوصف",
+    "specifications": "المواصفات",
+    "reviews": "المراجعات"
+  },
+  "home": {
+    "heroTitle": "تجهز للإنطلاق",
+    "heroSubtitle": "اكتشف الخوذات والسترات والإكسسوارات المتميزة المصممة للسلامة والأناقة.",
+    "shopHelmets": "تسوق الخوذات",
+    "viewOffers": "مشاهدة العروض",
+    "featuredProducts": "المنتجات المميزة",
+    "newArrivals": "وصل حديثاً",
+    "exploreMore": "اكتشف المزيد",
+    "shopByCategory": "تسوق حسب الفئة",
+    "brandMarqueeTitle": "موثوق به من قبل أفضل العلامات التجارية في الصناعة",
+    "trustBadges": {
+      "freeShipping": {
+        "title": "شحن مجاني",
+        "subtitle": "على جميع الطلبات فوق 375 ريال سعودي"
+      },
+      "rideWithConfidence": {
+        "title": "قُد بثقة",
+        "subtitle": "إرجاع سهل وضمان لمدة عام"
+      },
+      "secureCheckout": {
+        "title": "دفع آمن",
+        "subtitle": "بياناتك محمية بأفضل معايير الأمان"
+      }
+    }
+  },
+  "cartPage": {
+    "title": "عربة التسوق الخاصة بك",
+    "emptyTitle": "عربتك فارغة",
+    "emptySubtitle": "يبدو أنك لم تضف أي شيء إلى سلتك بعد.",
+    "startShopping": "ابدأ التسوق",
+    "orderSummary": "ملخص الطلب",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "tax": "الضريبة",
+    "total": "المجموع الكلي",
+    "couponCode": "رمز القسيمة",
+    "apply": "تطبيق",
+    "couponApplied": "تم تطبيق القسيمة \"{{code}}\"",
+    "proceedToCheckout": "المتابعة لإتمام الشراء"
+  },
+  "checkoutPage": {
+    "title": "إتمام الشراء",
+    "shippingInfo": "معلومات الشحن",
+    "paymentMethod": "طريقة الدفع",
+    "orderSummary": "ملخص الطلب",
+    "placeOrder": "تأكيد الطلب ({{total}})",
+    "processing": "جاري المعالجة...",
+    "payment": {
+      "card": "بطاقة",
+      "paypal": "باي بال",
+      "cod": "الدفع عند الاستلام",
+      "tabby": "تابي",
+      "applepay": "Apple Pay"
+    },
+    "tabbyInfo": "قسمها على 4 دفعات بدون فوائد.",
+    "applePayInfo": "ادفع باستخدام تفاصيل Apple Pay المحفوظة."
+  },
+  "loginPage": {
+    "title": "تسجيل الدخول",
+    "description": "أدخل بياناتك للوصول إلى حسابك.",
+    "signIn": "تسجيل الدخول",
+    "signingIn": "جاري تسجيل الدخول...",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "انشاء حساب"
+  },
+  "languages": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}

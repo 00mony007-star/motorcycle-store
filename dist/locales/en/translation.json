@@ -1,0 +1,113 @@
+{
+  "header": {
+    "searchPlaceholder": "Search helmets, jackets, gloves...",
+    "themeToggle": "Toggle theme",
+    "wishlist": "Wishlist",
+    "cart": "Shopping cart",
+    "userMenu": "User menu",
+    "myAccount": "My Account",
+    "myOrders": "My Orders",
+    "adminPanel": "Admin Panel",
+    "signOut": "Sign Out",
+    "signIn": "Sign in",
+    "menu": "Menu"
+  },
+  "footer": {
+    "shop": "Shop",
+    "helmets": "Helmets",
+    "jackets": "Jackets",
+    "gloves": "Gloves",
+    "boots": "Boots",
+    "accessories": "Accessories",
+    "offers": "Special Offers",
+    "customerService": "Customer Service",
+    "contactUs": "Contact Us",
+    "shippingInfo": "Shipping Info",
+    "returns": "Returns & Exchanges",
+    "stayConnected": "Stay Connected",
+    "newsletterPrompt": "Get the latest gear reviews, safety tips, and exclusive offers.",
+    "subscribe": "Subscribe",
+    "copyright": "© 2025 MotoGear Store. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "added": "Added",
+    "outOfStock": "Out of Stock",
+    "featured": "Featured",
+    "sale": "SALE",
+    "description": "Description",
+    "specifications": "Specifications",
+    "reviews": "Reviews"
+  },
+  "home": {
+    "heroTitle": "Gear Up for the Ride",
+    "heroSubtitle": "Discover premium helmets, jackets, and accessories designed for safety and style.",
+    "shopHelmets": "Shop Helmets",
+    "viewOffers": "View Offers",
+    "featuredProducts": "Featured Products",
+    "newArrivals": "New Arrivals",
+    "exploreMore": "Explore More",
+    "shopByCategory": "Shop By Category",
+    "brandMarqueeTitle": "Trusted by the best brands in the industry",
+    "trustBadges": {
+      "freeShipping": {
+        "title": "Free Shipping",
+        "subtitle": "On all orders over $99"
+      },
+      "rideWithConfidence": {
+        "title": "Ride With Confidence",
+        "subtitle": "Easy returns and a 1-year warranty"
+      },
+      "secureCheckout": {
+        "title": "Secure Checkout",
+        "subtitle": "Your data is protected with best-in-class security"
+      }
+    }
+  },
+  "cartPage": {
+    "title": "Your Shopping Cart",
+    "emptyTitle": "Your Cart is Empty",
+    "emptySubtitle": "Looks like you haven't added anything to your cart yet.",
+    "startShopping": "Start Shopping",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "Tax",
+    "total": "Total",
+    "couponCode": "Coupon Code",
+    "apply": "Apply",
+    "couponApplied": "Coupon \"{{code}}\" applied",
+    "proceedToCheckout": "Proceed to Checkout"
+  },
+  "checkoutPage": {
+    "title": "Checkout",
+    "shippingInfo": "Shipping Information",
+    "paymentMethod": "Payment Method",
+    "orderSummary": "Order Summary",
+    "placeOrder": "Place Order ({{total}})",
+    "processing": "Processing...",
+    "payment": {
+      "card": "Card",
+      "paypal": "PayPal",
+      "cod": "COD",
+      "tabby": "Tabby",
+      "applepay": "Apple Pay"
+    },
+    "tabbyInfo": "Split into 4 interest-free payments.",
+    "applePayInfo": "Pay with your saved Apple Pay details."
+  },
+  "loginPage": {
+    "title": "Login",
+    "description": "Enter your credentials to access your account.",
+    "signIn": "Sign In",
+    "signingIn": "Signing in...",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "languages": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}
