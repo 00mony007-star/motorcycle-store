@@ -4,36 +4,39 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
-import Image from 'next/image'
 
-// Mock data with working image URLs
+// Mock data with CSS-based placeholders
 const featuredProducts = [
   {
     id: '1',
     title: 'Premium Racing Helmet',
     price: 29999,
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
+    emoji: '🏍️',
+    gradient: 'from-red-500 to-red-700',
     slug: 'premium-racing-helmet'
   },
   {
     id: '2', 
     title: 'Leather Racing Jacket',
     price: 49999,
-    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
+    emoji: '🧥',
+    gradient: 'from-brown-500 to-brown-700',
     slug: 'leather-racing-jacket'
   },
   {
     id: '3',
     title: 'Carbon Fiber Gloves',
     price: 15999,
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
+    emoji: '🧤',
+    gradient: 'from-gray-500 to-gray-700',
     slug: 'carbon-fiber-gloves'
   },
   {
     id: '4',
     title: 'Performance Boots',
     price: 34999,
-    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400',
+    emoji: '👢',
+    gradient: 'from-black to-gray-800',
     slug: 'performance-boots'
   },
 ]
@@ -50,20 +53,10 @@ export function FeaturedProducts() {
           whileHover={{ y: -5 }}
           className="group"
         >
-          <Card className="premium-card h-full overflow-hidden border shadow-lg hover:shadow-xl transition-all duration-300">
+          <Card className="h-full overflow-hidden border shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
             <CardContent className="p-0">
-              <div className="relative aspect-square overflow-hidden bg-slate-100">
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  onError={(e) => {
-                    // Fallback to placeholder
-                    const target = e.target as HTMLImageElement
-                    target.src = `https://via.placeholder.com/400x400/64748b/ffffff?text=${encodeURIComponent(product.title)}`
-                  }}
-                />
+              <div className={`relative aspect-square overflow-hidden bg-gradient-to-br ${product.gradient} flex items-center justify-center`}>
+                <div className="text-6xl">{product.emoji}</div>
                 <div className="absolute top-3 left-3">
                   <span className="px-2 py-1 bg-orange-500 text-white text-xs font-medium rounded-full">
                     Featured
@@ -71,7 +64,7 @@ export function FeaturedProducts() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="font-semibold text-lg mb-2 group-hover:text-orange-500 transition-colors">
+                <h3 className="font-semibold text-lg mb-2 group-hover:text-orange-500 transition-colors text-slate-900">
                   {product.title}
                 </h3>
                 <p className="text-3xl font-bold text-orange-500 mb-4">

@@ -4,37 +4,40 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Sparkles } from 'lucide-react'
 
-// Mock recommended products
+// Mock recommended products with CSS placeholders
 const recommendedProducts = [
   {
     id: '5',
     title: 'Sport Touring Helmet',
     price: 24999,
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop',
+    emoji: '🏍️',
+    gradient: 'from-indigo-500 to-indigo-700',
     slug: 'sport-touring-helmet'
   },
   {
     id: '6',
     title: 'Mesh Summer Jacket',
     price: 19999,
-    image: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=400&h=400&fit=crop',
+    emoji: '🌬️',
+    gradient: 'from-cyan-500 to-cyan-700',
     slug: 'mesh-summer-jacket'
   },
   {
     id: '7',
     title: 'Waterproof Gloves',
     price: 8999,
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop',
+    emoji: '💧',
+    gradient: 'from-blue-500 to-blue-700',
     slug: 'waterproof-gloves'
   },
   {
     id: '8',
     title: 'Adventure Boots',
     price: 29999,
-    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=400&fit=crop',
+    emoji: '🥾',
+    gradient: 'from-orange-500 to-orange-700',
     slug: 'adventure-boots'
   },
 ]
@@ -55,13 +58,13 @@ export function RecommendedProducts() {
               ease: "easeInOut"
             }}
           >
-            <Sparkles className="w-6 h-6 text-primary" />
+            <Sparkles className="w-6 h-6 text-orange-500" />
           </motion.div>
-          <h2 className="text-3xl font-display font-bold heading-premium">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-orange-500 to-slate-900 bg-clip-text text-transparent">
             Recommended for You
           </h2>
         </div>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           Curated selections based on your interests and riding style.
         </p>
       </div>
@@ -76,29 +79,24 @@ export function RecommendedProducts() {
             whileHover={{ y: -5 }}
             className="group"
           >
-            <Card className="premium-card h-full overflow-hidden">
+            <Card className="h-full overflow-hidden border shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
               <CardContent className="p-0">
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                <div className={`relative aspect-square overflow-hidden bg-gradient-to-br ${product.gradient} flex items-center justify-center`}>
+                  <div className="text-6xl">{product.emoji}</div>
                   <div className="absolute top-3 left-3">
-                    <span className="px-2 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
+                    <span className="px-2 py-1 bg-orange-500 text-white text-xs font-medium rounded-full">
                       Recommended
                     </span>
                   </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="font-semibold text-lg mb-2 group-hover:text-orange-500 transition-colors text-slate-900">
                     {product.title}
                   </h3>
-                  <p className="text-2xl font-bold text-primary mb-4">
+                  <p className="text-2xl font-bold text-orange-500 mb-4">
                     ${(product.price / 100).toFixed(2)}
                   </p>
-                  <Button asChild className="w-full">
+                  <Button asChild className="w-full bg-orange-500 hover:bg-orange-600">
                     <Link href={`/product/${product.slug}`}>
                       View Details
                     </Link>

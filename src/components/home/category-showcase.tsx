@@ -3,35 +3,38 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const categories = [
   {
     id: '1',
     name: 'Helmets',
     description: 'Premium safety helmets',
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+    emoji: '🪖',
+    gradient: 'from-blue-500 to-blue-700',
     slug: 'helmets'
   },
   {
     id: '2',
     name: 'Jackets',
     description: 'Protective riding jackets',
-    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+    emoji: '🧥',
+    gradient: 'from-green-500 to-green-700',
     slug: 'jackets'
   },
   {
     id: '3',
     name: 'Gloves',
     description: 'High-performance gloves',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+    emoji: '🧤',
+    gradient: 'from-purple-500 to-purple-700',
     slug: 'gloves'
   },
   {
     id: '4',
     name: 'Boots',
     description: 'Professional riding boots',
-    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+    emoji: '👢',
+    gradient: 'from-yellow-500 to-yellow-700',
     slug: 'boots'
   },
 ]
@@ -59,17 +62,8 @@ export function CategoryShowcase() {
             className="group"
           >
             <Link href={`/category/${category.slug}`} className="block">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4 bg-slate-100">
-                <Image
-                  src={category.image}
-                  alt={category.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.src = `https://via.placeholder.com/600x400/64748b/ffffff?text=${encodeURIComponent(category.name)}`
-                  }}
-                />
+              <div className={`relative aspect-[4/3] overflow-hidden rounded-lg mb-4 bg-gradient-to-br ${category.gradient} flex items-center justify-center`}>
+                <div className="text-6xl">{category.emoji}</div>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                 <div className="absolute inset-0 flex items-end p-6">
                   <div className="text-white">

@@ -7,15 +7,10 @@ import Link from 'next/link'
 export function HeroSection() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-black">
-      {/* Background Image */}
+      {/* Background Pattern */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080)',
-          }}
-        />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="w-full h-full bg-gradient-to-br from-slate-900 via-orange-900/20 to-black" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(249,115,22,0.1)_0%,_transparent_50%)]" />
       </div>
 
       {/* Content */}
