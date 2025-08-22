@@ -31,6 +31,12 @@ export function RealtimeProvider({ children }: RealtimeProviderProps) {
   const isConnectedRef = useRef(false)
 
   const subscribe = (table: string, callback: (payload: RealtimePostgresChangesPayload<any>) => void) => {
+    // If Supabase is not configured, return empty unsubscribe function
+    if (!supabase) {
+      console.warn(`Realtime subscription for ${table} skipped - Supabase not configured`)
+      return () => {}
+    }
+
     const channelName = `realtime:${table}`
     
     if (channelsRef.current.has(channelName)) {
@@ -84,7 +90,7 @@ export function RealtimeProvider({ children }: RealtimeProviderProps) {
 
     return () => {
       const channel = channelsRef.current.get(channelName)
-      if (channel) {
+      if (channel && supabase) {
         supabase.removeChannel(channel)
         channelsRef.current.delete(channelName)
       }
@@ -92,35 +98,36 @@ export function RealtimeProvider({ children }: RealtimeProviderProps) {
   }
 
   useEffect(() => {
+    // Only subscribe if Supabase is configured
+    if (!supabase) {
+      console.warn('Realtime provider: Supabase not configured, skipping subscriptions')
+      return
+    }
+
     // Subscribe to critical tables for real-time updates
     const unsubscribers = [
       subscribe('products', (payload) => {
-        // Invalidate product queries
         queryClient.invalidateQueries({ queryKey: ['products'] })
         queryClient.invalidateQueries({ queryKey: ['product', payload.new?.slug] })
       }),
       
       subscribe('prices', (payload) => {
-        // Invalidate price-related queries
         queryClient.invalidateQueries({ queryKey: ['products'] })
         queryClient.invalidateQueries({ queryKey: ['product'] })
       }),
       
       subscribe('inventory', (payload) => {
-        // Invalidate inventory queries
         queryClient.invalidateQueries({ queryKey: ['products'] })
         queryClient.invalidateQueries({ queryKey: ['inventory'] })
         queryClient.invalidateQueries({ queryKey: ['admin', 'analytics'] })
       }),
       
       subscribe('orders', (payload) => {
-        // Invalidate order queries
         queryClient.invalidateQueries({ queryKey: ['orders'] })
         queryClient.invalidateQueries({ queryKey: ['admin', 'analytics'] })
       }),
       
       subscribe('reviews', (payload) => {
-        // Invalidate review queries
         queryClient.invalidateQueries({ queryKey: ['reviews'] })
         queryClient.invalidateQueries({ queryKey: ['product', payload.new?.product_id] })
       }),
@@ -134,9 +141,11 @@ export function RealtimeProvider({ children }: RealtimeProviderProps) {
   // Cleanup on unmount
   useEffect(() => {
     return () => {
-      channelsRef.current.forEach(channel => {
-        supabase.removeChannel(channel)
-      })
+      if (supabase) {
+        channelsRef.current.forEach(channel => {
+          supabase.removeChannel(channel)
+        })
+      }
       channelsRef.current.clear()
     }
   }, [])
