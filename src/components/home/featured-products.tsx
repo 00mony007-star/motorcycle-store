@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { useCartStore } from '@/lib/stores/cart-store'
 import Link from 'next/link'
 
 // Mock data with CSS-based placeholders
@@ -42,6 +43,24 @@ const featuredProducts = [
 ]
 
 export function FeaturedProducts() {
+  const { addItem } = useCartStore()
+
+  const handleAddToCart = (product: any) => {
+    // Convert to the format expected by cart store
+    const cartProduct = {
+      id: product.id,
+      title: product.title,
+      price: {
+        amount_cents: product.price
+      },
+      media: [],
+      brand: { name: 'MotoGear' },
+      slug: product.slug
+    }
+    
+    addItem(cartProduct)
+  }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {featuredProducts.map((product, index) => (
@@ -70,11 +89,21 @@ export function FeaturedProducts() {
                 <p className="text-3xl font-bold text-orange-500 mb-4">
                   ${(product.price / 100).toFixed(2)}
                 </p>
-                <Button asChild className="w-full bg-orange-500 hover:bg-orange-600">
-                  <Link href={`/product/${product.slug}`}>
-                    View Details
-                  </Link>
-                </Button>
+                
+                <div className="space-y-2">
+                  <Button 
+                    onClick={() => handleAddToCart(product)}
+                    className="w-full bg-orange-500 hover:bg-orange-600"
+                  >
+                    🛒 Add to Cart
+                  </Button>
+                  
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href={`/product/${product.slug}`}>
+                      View Details
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
